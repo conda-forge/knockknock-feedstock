@@ -1,5 +1,5 @@
 {% set name = "knockknock" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 6d0fa6866b3d6ab4d75811f4085db9be04d558aae7a034add2b659fde95e9308
+  sha256: 57c82cd3ac47f60d65d843d9e202957f8cc1de184144ff19e9bde0e12ba5a5bd
 
 build:
   number: 0
