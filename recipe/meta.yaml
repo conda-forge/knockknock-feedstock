@@ -1,5 +1,5 @@
 {% set name = "knockknock" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 8d8ed298087a4cdbcb8bd302a81fbbb0a265d6ad3c3f19665f6033058e29db70
+  sha256: 1b7274b52e58bf1b1e0a8731a1d3bc2f6af677c02ddc46048587fd9c16cd9465
 
 build:
   number: 0
@@ -22,6 +22,7 @@ requirements:
     - python >=3.6
   run:
     - keyring
+    - matrix_client
     - python >=3.6
     - python-telegram-bot
     - requests
