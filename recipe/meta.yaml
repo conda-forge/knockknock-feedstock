@@ -1,20 +1,20 @@
 {% set name = "knockknock" %}
-{% set version = "0.1.7" %}
+{% set version = "0.1.8" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 1b7274b52e58bf1b1e0a8731a1d3bc2f6af677c02ddc46048587fd9c16cd9465
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 85cb70c5e9c8e487979aed394c4033e6e4594d272840c62c6c0c586877575fcb
 
 build:
   number: 0
   noarch: python
   entry_points:
     - knockknock = knockknock.__main__:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,11 +36,11 @@ test:
     - knockknock --help
 
 about:
-  home: "http://github.com/huggingface/knockknock"
+  home: http://github.com/huggingface/knockknock
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Be notified when your training is complete with only two additional lines of code"
+  summary: Be notified when your training is complete with only two additional lines of code
 
 extra:
   recipe-maintainers:
