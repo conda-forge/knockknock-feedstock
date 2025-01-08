@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c7fa2038ddd5a10379b5ef11b775865298c637cbd9a6a175c2c40d8e2b8df773
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - knockknock = knockknock.__main__:main
@@ -19,17 +19,19 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - keyring
     - matrix_client
-    - python >=3.6
+    - python >={{ python_min }}
     - python-telegram-bot
     - requests
     - twilio
     - yagmail >=0.11.214
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - knockknock
   commands:
